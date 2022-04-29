@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block body %}
+<table cellspacing="1" border="1" cellpadding="2">
+    <tr>
+        <td>ФИО</td>
+        <td>Шифр перестановки</td>
+        <td>Шифр «Магические квадраты»</td>
+        <td>Шифр Цезаря</td>
+        <td>Шифр Виженера</td>
+        <td>Шифр гаммирования</td>
+    </tr>
+    {% for us in users %}
+     <tr>
+        <td> {{ us.name }} </td>
+         {% for res in results %}
+             {% if res.id_stud==us.id %}
+                <td> {{ res.permutation_cipher }} </td>
+                <td> {{ res.cipher_magic_squares }} </td>
+                 <td> {{ res.caesar_cipher }} </td>
+                 <td> {{ res.vigenere_cipher }} </td>
+                 <td> {{ res.gamma_code }} </td>
+             {% endif %}
+         {% endfor %}
+     </tr>
+    {% endfor %}
+</table>
+{% endblock %}

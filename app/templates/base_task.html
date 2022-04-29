@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+
+{% block form_answer %}
+    <form method="post" class="answer">
+        <input class="lf--input answer" type="text" placeholder="Ответ" name="answer" id="answer">
+        <input class="lf--submit answer" type='submit' name="answer" value='Ответить'>
+        <input class="lf--submit answer" type="submit" name="skip" value="Пропустить">
+    </form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block body %}
+    <nav>
+            <a href="/" class='lf--forgot'>Главная</a>
+        </nav>
+    <h1>Поздравляем вы прошли квест!</h1>
+    {% set ciphers = {'Шифр перестановки': permutation_cipher,
+    'Шифр «Магические квадраты»': cipher_magic_squares,
+    'Шифр Цезаря':caesar_cipher,
+    'Шифр Виженера':vigenere_cipher,
+    'Шифр гаммирования': gamma_code} %}
+    <p>Ваши результаты:</p>
+    <p>Логин: {{ name }}</p>
+    <table cellspacing="1" border="1" cellpadding="2">
+        <tr>
+            <td>Задание</td>
+            <td>Результат</td>
+        </tr>
+        {% for cipher, result in ciphers.items() %}
+            <tr>
+            <td>{{ cipher }}</td>
+            <td>{{ result }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}

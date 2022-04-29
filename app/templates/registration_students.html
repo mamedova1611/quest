@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h1>Регистрация студентов</h1>
+    <p>{{ error }}</p>
+    <form method="post" class="answer">
+        <input class="lf--input answer" type="text" placeholder="Введите Фамилию Имя" name="name" id="name" required>
+        <input class="lf--input answer" type='text' placeholder="Введите пароль" name="password" id="password" required>
+        <input class="lf--submit answer" type="submit" name="save" value="Сохранить">
+    </form>
+{% endblock %}
